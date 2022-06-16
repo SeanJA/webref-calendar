@@ -116,7 +116,7 @@ class Row
      */
     public function description()
     {
-        return $this->away() . ' at ' . $this->home();
+        return $this->gameType() . PHP_EOL . $this->gameSheet();
     }
 
     /**
@@ -124,7 +124,7 @@ class Row
      */
     public function summary()
     {
-        return $this->description() . ' - ' . $this->gameType() . PHP_EOL
-            . $this->gameSheet();
+        return $this->away() . ' at ' . $this->home();
+
     }
 }
