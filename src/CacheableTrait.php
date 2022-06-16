@@ -19,7 +19,11 @@ trait CacheableTrait
      */
     protected $hash_algo = 'sha256';
 
-    public function setCache($cache)
+    /**
+     * @param Cache $cache
+     * @return void
+     */
+    public function setCache(Cache $cache)
     {
         $this->cache = $cache;
     }
