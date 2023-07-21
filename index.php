@@ -1,6 +1,5 @@
 <?php
 
-use App\FieldLocation;
 use App\Row;
 use App\WebRefClient;
 use Eluceo\iCal\Component\Calendar;
@@ -43,12 +42,11 @@ foreach ($rows as $element) {
 
     $event = new Event();
 
-    $location = new FieldLocation($row->arena());
-
     $event->setSummary($row->summary())
         ->setDescription($row->description())
-        ->setLocation($location->getAddress(), $location->getTitle(), $location->getGeo())
+        ->setLocation($row->address(), $row->arena(), $row->geo())
         ->setDtStart($row->date())
+        ->setUrl($row->gameSheet())
         ->setUseUtc(true);
     $calendar->addComponent($event);
 }
