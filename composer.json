@@ -11,7 +11,8 @@
     "guzzlehttp/guzzle": "^6.0.0",
     "gregwar/cache": "^1.0",
     "eluceo/ical": "^0.16.1",
-    "ext-dom": "*"
+    "ext-dom": "*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

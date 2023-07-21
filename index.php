@@ -35,6 +35,11 @@ foreach ($rows as $element) {
     if(!$row->isForTeam($team)){
         continue;
     }
+
+    if($row->isByeWeek()){
+        continue;
+    }
+
     $event = new Event();
 
     $event->setSummary($row->summary())

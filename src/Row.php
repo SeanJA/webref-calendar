@@ -5,7 +5,7 @@ namespace App;
 use DateTime;
 use DOMElement;
 
-class Row
+class Row implements \JsonSerializable
 {
     /**
      * @var DOMElement
@@ -111,7 +111,8 @@ class Row
         return $this->nodeValue(14);
     }
 
-    public function isForTeam($team){
+    public function isForTeam($team)
+    {
         return in_array($team, [$this->home(), $this->away()]);
     }
 
@@ -129,6 +130,20 @@ class Row
     public function summary()
     {
         return $this->away() . ' at ' . $this->home();
+    }
 
+    public function jsonSerialize()
+    {
+        return [
+            'date' => $this->date()->format('Y-m-d H:i:s'),
+            'home' => $this->home(),
+            'away' => $this->away(),
+            'description' => $this->description()
+        ];
+    }
+
+    public function isByeWeek()
+    {
+        return $this->gameType() === 'Bye (No Game)';
     }
 }

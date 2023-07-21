@@ -3,6 +3,8 @@
 use Dotenv\Dotenv;
 
 date_default_timezone_set('America/Toronto');
+ini_set('display_errors', false);
+ini_set('error_reporting', E_ERROR);
 
 require 'vendor/autoload.php';
 
