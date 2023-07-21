@@ -36,7 +36,7 @@ class Row
      */
     private function nodeValue(int $nodeIndex)
     {
-        return $this->node($nodeIndex)->nodeValue;
+        return trim($this->node($nodeIndex)->nodeValue);
     }
 
     /**
@@ -109,6 +109,10 @@ class Row
     public function away()
     {
         return $this->nodeValue(14);
+    }
+
+    public function isForTeam($team){
+        return in_array($team, [$this->home(), $this->away()]);
     }
 
     /**

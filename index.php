@@ -15,6 +15,8 @@ $guzzle = new Client([
     'cookies' => true
 ]);
 
+$team = $_GET['team']?? getenv('DEFAULT_TEAM_NAME');
+
 $client = new WebRefClient($guzzle, $cache);
 
 $rows = $client->getRows();
