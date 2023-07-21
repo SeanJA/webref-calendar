@@ -19,7 +19,7 @@ class FieldLocation
         ],
         'Springbank Flats' => [
             'geo' => '42.97610753583049, -81.26747482068902',
-            'location' => 'Springbank Flats, Springbank Drive, London, ON'
+            'location' => 'Springbank Drive, London, ON'
         ],
         'Riverbend #1' => [
             'geo' => '42.9715951171613, -81.36293842795867',

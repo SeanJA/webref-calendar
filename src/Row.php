@@ -12,9 +12,12 @@ class Row implements \JsonSerializable
      */
     private $element;
 
+    private $location;
+
     public function __construct(DOMElement $element)
     {
         $this->element = $element;
+        $this->location = new FieldLocation($this->arena());
     }
 
     /**
@@ -121,7 +124,10 @@ class Row implements \JsonSerializable
      */
     public function description()
     {
-        return $this->gameType() . PHP_EOL . $this->gameSheet();
+        return
+            $this->arena() . PHP_EOL .
+            $this->gameType() . PHP_EOL .
+            $this->gameSheet();
     }
 
     /**
@@ -145,5 +151,15 @@ class Row implements \JsonSerializable
     public function isByeWeek()
     {
         return $this->gameType() === 'Bye (No Game)';
+    }
+
+    public function address()
+    {
+        return $this->location->getAddress();
+    }
+
+    public function geo()
+    {
+        return $this->location->getGeo();
     }
 }
