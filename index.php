@@ -15,6 +15,8 @@ $guzzle = new Client([
     'cookies' => true
 ]);
 
+$team = $_GET['team']?? 'Neymar Mr. Nice Guy';
+
 $client = new WebRefClient($guzzle, $cache);
 
 $rows = $client->getRows();
