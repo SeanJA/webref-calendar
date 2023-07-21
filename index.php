@@ -32,6 +32,9 @@ foreach ($rows as $element) {
     if ($row->isNotCalendarEntry()) {
         continue;
     }
+    if(!$row->isForTeam($team)){
+        continue;
+    }
     $event = new Event();
 
     $event->setSummary($row->summary())
