@@ -59,7 +59,7 @@ class FieldLocation
 
     public function getAddress()
     {
-        return isset($this->location)? $this->fieldName . ', ' . $this->location : $this->fieldName;
+        return isset($this->location)? $this->location : $this->fieldName;
     }
 
     private function cleanupFieldName($fieldName)
